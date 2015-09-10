@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using MiniJSON;
 
 public class TitleLogin : MonoBehaviour {
 
-	private LoginManager loginManager;
+	LoginManager loginManager;
+	UserManager userManager;
+
 
 	// Use this for initialization
 	void Start () {
 		loginManager = GameObject.Find ("LoginManager").GetComponent<LoginManager> ();
+		userManager = GameObject.Find ("UserManager").GetComponent<UserManager> ();
 	}
 	
 	// Update is called once per frame
@@ -39,9 +44,17 @@ public class TitleLogin : MonoBehaviour {
 		yield return download;
 		if (download.error == null) {
 			Debug.Log (download.text);
-			//
+			// cast
+			var json = Json.Deserialize (download.text) as Dictionary<string, object>;
+
+			// keep status
+			userManager.userInfo.Add("user_id", (long)json["user_id"]);
+			userManager.userInfo.Add("play_id", (long)json["play_id"]);
+			userManager.userInfo.Add("state", (string)json["state"]);
+			userManager.userInfo.Add("role", (string)json["role"]);
+
 			// scene load
-			//
+			Application.LoadLevel("main");
 		} else {
 			Debug.Log ("Error");
 		}
