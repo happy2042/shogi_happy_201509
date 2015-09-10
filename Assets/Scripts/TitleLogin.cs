@@ -45,7 +45,7 @@ public class TitleLogin : MonoBehaviour {
 		if (download.error == null) {
 			Debug.Log (download.text);
 			// cast
-			var json = Json.Deserialize (download.text) as Dictionary<string, object>;
+			var json = Json.Deserialize(download.text) as Dictionary<string, object>;
 
 			// keep status
 			userManager.userInfo.Add("user_id", (long)json["user_id"]);
