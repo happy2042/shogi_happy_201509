@@ -195,7 +195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Input IP address ... '
+  m_Text: 'Input Address ... '
 --- !u!224 &342964013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -230,6 +230,7 @@ GameObject:
   - 222: {fileID: 591324274}
   - 114: {fileID: 591324273}
   - 114: {fileID: 591324272}
+  - 114: {fileID: 591324275}
   m_Layer: 5
   m_Name: InputName
   m_TagString: Untagged
@@ -304,7 +305,18 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_EndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 591324275}
+        m_MethodName: NameEndEdit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChange:
@@ -342,6 +354,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591324270}
+--- !u!114 &591324275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591324270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6a196ec79a243458ceca3db9a145f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &611263888
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +376,7 @@ GameObject:
   - 222: {fileID: 611263892}
   - 114: {fileID: 611263891}
   - 114: {fileID: 611263890}
+  - 114: {fileID: 611263893}
   m_Layer: 5
   m_Name: InputRoomNo
   m_TagString: Untagged
@@ -427,7 +451,18 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_EndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 611263893}
+        m_MethodName: RoomEndEdit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChange:
@@ -465,6 +500,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 611263888}
+--- !u!114 &611263893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 611263888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6a196ec79a243458ceca3db9a145f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &723586199
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +577,45 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 723586199}
+--- !u!1 &785805854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 785805856}
+  - 114: {fileID: 785805855}
+  m_Layer: 0
+  m_Name: LoginManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &785805855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 785805854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cc110d949f97c49be9c048319b4e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &785805856
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 785805854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 393.813324, y: 217.704575, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &865411920
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +741,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your name ...
+  m_Text: Your Name ...
 --- !u!222 &902674304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -674,6 +759,7 @@ GameObject:
   - 222: {fileID: 1019440047}
   - 114: {fileID: 1019440046}
   - 114: {fileID: 1019440045}
+  - 114: {fileID: 1019440049}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -719,7 +805,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1019440046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1019440049}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1019440046
@@ -767,6 +864,17 @@ RectTransform:
   m_AnchoredPosition: {x: -7.62939999e-06, y: -160}
   m_SizeDelta: {x: 339, y: 50}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &1019440049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1019440044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc5c685d0d13a34dacc25a23df3128a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1040181972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1206,7 @@ GameObject:
   - 222: {fileID: 1764344282}
   - 114: {fileID: 1764344281}
   - 114: {fileID: 1764344280}
+  - 114: {fileID: 1764344284}
   m_Layer: 5
   m_Name: InputAddress
   m_TagString: Untagged
@@ -1153,7 +1262,18 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_EndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1764344284}
+        m_MethodName: AddressEndEdit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChange:
@@ -1210,6 +1330,17 @@ RectTransform:
   m_AnchoredPosition: {x: 1.52587891e-05, y: -21}
   m_SizeDelta: {x: 243, y: 36}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &1764344284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764344279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6a196ec79a243458ceca3db9a145f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1930371281
 GameObject:
   m_ObjectHideFlags: 0
