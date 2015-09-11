@@ -26,20 +26,24 @@ public class TitleLogin : MonoBehaviour {
 	
 	
 	private IEnumerator LoginAccess(){
+		/*
 		string playerName = "happy";
 		string url = "http://192.168.33.11:3000/users/login";
 		string playRoomNo = "1";
+		*/
 
 		WWWForm form = new WWWForm ();
-		
+
+		/*
 		form.AddField ("name", playerName);
 		form.AddField ("room_no", playRoomNo);
-		//form.AddField ("name", loginManager.GetPlayerName());
-		//form.AddField ("room_no", loginManager.GetRoomNo());
+		*/
+		form.AddField ("name", loginManager.GetPlayerName());
+		form.AddField ("room_no", loginManager.GetRoomNo());
 
 
-		WWW download = new WWW (url, form);
-		//WWW download = new WWW (loginManager.GetURL(), form);
+		//WWW download = new WWW (url, form);
+		WWW download = new WWW (loginManager.GetURL(), form);
 
 		yield return download;
 		if (download.error == null) {
