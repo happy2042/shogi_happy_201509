@@ -34,15 +34,9 @@ public class TitleLogin : MonoBehaviour {
 
 		WWWForm form = new WWWForm ();
 
-		/*
-		form.AddField ("name", playerName);
-		form.AddField ("room_no", playRoomNo);
-		*/
 		form.AddField ("name", loginManager.GetPlayerName());
 		form.AddField ("room_no", loginManager.GetRoomNo());
 
-
-		//WWW download = new WWW (url, form);
 		WWW download = new WWW (loginManager.GetURL(), form);
 
 		yield return download;
