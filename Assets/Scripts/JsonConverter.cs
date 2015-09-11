@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using MiniJSON;
 
 public class JsonConverter : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public Dictionary<string, object> JsonConv(WWW www){
+		var json 
+			= Json.Deserialize(www.text) as Dictionary<string, object>;
+
+		return json;
 	}
 }
