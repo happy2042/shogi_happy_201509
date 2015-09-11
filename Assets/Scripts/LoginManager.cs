@@ -6,6 +6,9 @@ public class LoginManager : MonoBehaviour {
 	private string playerName;
 	private string url;
 	private string playRoomNo;
+
+	public GameObject successImage;
+	public GameObject errorImage;
 	
 	public void SetPlayerName(string PlayerName){
 		playerName = PlayerName;
@@ -29,5 +32,13 @@ public class LoginManager : MonoBehaviour {
 
 	public string GetRoomNo(){
 		return playRoomNo;
+	}
+
+	public void ShowSuccess(){
+
+	}
+
+	public void ShowError(){
+
 	}
 }

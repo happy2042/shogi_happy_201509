@@ -48,6 +48,7 @@ public class TitleLogin : MonoBehaviour {
 		yield return download;
 		if (download.error == null) {
 			Debug.Log (download.text);
+			loginManager.ShowSuccess();
 			// cast
 			var json = Json.Deserialize(download.text) as Dictionary<string, object>;
 
@@ -61,6 +62,7 @@ public class TitleLogin : MonoBehaviour {
 			Application.LoadLevel("main");
 		} else {
 			Debug.Log ("Error");
+			loginManager.ShowError();
 		}
 	}
 }
