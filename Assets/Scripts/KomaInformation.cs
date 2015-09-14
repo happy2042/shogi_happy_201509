@@ -12,16 +12,16 @@ public class KomaInformation : MonoBehaviour {
 
 	public void MyPosition(){
 		RectTransform rect = this.GetComponent<RectTransform>();
-		rect.position = new Vector3(CalcPosX(posx), CalcPosY(posy), 0f);
+		rect.localPosition = new Vector3(CalcPosX(posx), CalcPosY(posy), 0f);
 	}
 
 	public float CalcPosX(long x){
-		float rectX = (300 - 60 * x) * 0.75f;
+		float rectX = 300 - 60 * x;
 		return rectX;
 	}
 
 	public float CalcPosY(long y){
-		float rectY = (320 - 64 * y) * 0.75f;
+		float rectY = 320 - 64 * y;
 		return rectY;
 	}
 

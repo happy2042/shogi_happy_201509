@@ -8,7 +8,7 @@ public class KomaGenerator : MonoBehaviour {
 	string url = "http://192.168.3.83:3000/pieces.json";
 
 	public GameObject koma;
-	public GameObject canvasObject;
+	public GameObject parentObject;
 
 	Wrapper wrapper;
 	JsonConverter jsonconverter;
@@ -17,7 +17,7 @@ public class KomaGenerator : MonoBehaviour {
 		wrapper = GameObject.Find("Wrapper").GetComponent<Wrapper>();
 		jsonconverter 
 			= GameObject.Find("JsonConverter").GetComponent<JsonConverter>();
-		canvasObject = GameObject.Find ("Canvas");
+		parentObject = GameObject.Find ("board");
 
 		KomaInfoGet ();
 	}
@@ -47,14 +47,16 @@ public class KomaGenerator : MonoBehaviour {
 	
 	// 駒を生成する
 	public void KomaArrange(Dictionary<string, object> komaInfo){
+		// 駒のprefab情報を取得
 		koma = (GameObject)Resources.Load ("Prefabs/koma");
+		// 駒の情報をセット
 		KomaInfoSet (komaInfo);
 
-		GameObject komaPrefab = (GameObject)Instantiate (koma, 
-		                                                 new Vector3(), 
-		                                                 Quaternion.identity);
-		komaPrefab.transform.SetParent (canvasObject.transform, false);
+		// Canvasの子として生成する
+		GameObject komaPrefab = (GameObject)Instantiate (koma);
+		komaPrefab.transform.SetParent (parentObject.transform, false);
 
+		// 駒の情報からスクリーン上の座標に変換
 		komaPrefab.GetComponent<KomaInformation> ().MyPosition ();
 	}
 

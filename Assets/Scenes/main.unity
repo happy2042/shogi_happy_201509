@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   koma: {fileID: 0}
-  canvasObject: {fileID: 0}
+  parentObject: {fileID: 0}
 --- !u!4 &209670938
 Transform:
   m_ObjectHideFlags: 0
