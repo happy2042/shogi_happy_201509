@@ -35,10 +35,14 @@ public class LoginManager : MonoBehaviour {
 	}
 
 	public void ShowSuccess(){
-
+		GameObject parentObject = GameObject.Find("Canvas");
+		GameObject successPrefab = (GameObject)Instantiate(successImage);
+		successPrefab.transform.SetParent (parentObject.transform, false);
 	}
 
 	public void ShowError(){
-
+		GameObject parentObject = GameObject.Find("Canvas");
+		GameObject errorPrefab = (GameObject)Instantiate(errorImage);
+		errorPrefab.transform.SetParent (parentObject.transform, false);
 	}
 }

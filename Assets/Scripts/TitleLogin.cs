@@ -38,7 +38,7 @@ public class TitleLogin : MonoBehaviour {
 		form.AddField ("name", loginManager.GetPlayerName());
 		form.AddField ("room_no", loginManager.GetRoomNo());
 
-		WWW download = new WWW (loginManager.GetURL(), form);
+		WWW download = new WWW ("http://" + loginManager.GetURL() + "/users/login", form);
 
 		yield return download;
 		if (download.error == null) {

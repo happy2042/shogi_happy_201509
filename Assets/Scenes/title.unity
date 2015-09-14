@@ -643,8 +643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38cc110d949f97c49be9c048319b4e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  successImage: {fileID: 0}
-  errorImage: {fileID: 0}
+  successImage: {fileID: 159150, guid: 4c8e81d558d541f4a8ec0e403d312b8f, type: 2}
+  errorImage: {fileID: 164162, guid: d167af1ad679bc641b5eacfea61c0b00, type: 2}
 --- !u!4 &785805856
 Transform:
   m_ObjectHideFlags: 0
