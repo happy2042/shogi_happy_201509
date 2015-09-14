@@ -10,6 +10,7 @@ public class TitleLogin : MonoBehaviour {
 	UserManager userManager;
 
 
+
 	// Use this for initialization
 	void Start () {
 		loginManager = GameObject.Find ("LoginManager").GetComponent<LoginManager> ();
@@ -45,6 +46,7 @@ public class TitleLogin : MonoBehaviour {
 			loginManager.ShowSuccess();
 			// cast
 			var json = Json.Deserialize(download.text) as Dictionary<string, object>;
+
 
 			// keep status
 			userManager.userInfo.Add("user_id", (long)json["user_id"]);
