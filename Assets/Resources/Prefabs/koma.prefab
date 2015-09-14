@@ -32,7 +32,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 373c6669dd388814fad8b5ed549a5f62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22afb2b75afb01e45bdfaa2490a6b248, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -92,9 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916737d3901e88140987857c1fff563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posx: 0
-  posy: 0
-  owner: 0
+  posx: 5
+  posy: 1
+  owner: 2
   promote: 0
 --- !u!222 &22269284
 CanvasRenderer:
@@ -134,6 +134,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 22afb2b75afb01e45bdfaa2490a6b248,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 103750}
