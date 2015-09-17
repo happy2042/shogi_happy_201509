@@ -14,9 +14,4 @@ public class UserManager : MonoBehaviour {
 	void Start () {
 		userInfo = new Dictionary<string, object> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

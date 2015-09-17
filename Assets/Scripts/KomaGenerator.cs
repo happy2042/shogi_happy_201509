@@ -11,15 +11,18 @@ public class KomaGenerator : MonoBehaviour {
 	public GameObject parentObject;
 
 	Wrapper wrapper;
-	JsonConverter jsonconverter;
 
 	void Start(){
 		wrapper = GameObject.Find("Wrapper").GetComponent<Wrapper>();
-		jsonconverter 
-			= GameObject.Find("JsonConverter").GetComponent<JsonConverter>();
 		parentObject = GameObject.Find ("board");
 
 		KomaInfoGet ();
+	}
+
+	// 駒の情報を取得
+	public void KomaInfoGet(){
+		WWW www = wrapper.GET (url, SetKomaArrange);
+
 	}
 
 	public void SetKomaArrange(Dictionary<string,object> json) {
@@ -29,20 +32,6 @@ public class KomaGenerator : MonoBehaviour {
 			// 生成
 			KomaArrange(info);
 		}
-	}
-	
-	// 駒の情報を取得
-	public void KomaInfoGet(){
-
-
-		WWW www = wrapper.GET (url, SetKomaArrange);
-		//var json = jsonconverter.JsonConv (www);
-
-		//for(int i = 0; i < 40; i++){
-		//	info = (Dictionary<string, object>)json[(i+1).ToString()];
-			// 生成
-		//	KomaArrange(info);
-		//}
 	}
 	
 	// 駒を生成する
@@ -58,6 +47,7 @@ public class KomaGenerator : MonoBehaviour {
 
 		// 駒の情報からスクリーン上の座標に変換
 		komaPrefab.GetComponent<KomaInformation> ().MyPosition ();
+		komaPrefab.GetComponent<KomaInformation> ().SpriteChanger ();
 	}
 
 	// 駒に取得した情報を投げる

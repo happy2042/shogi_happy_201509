@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Wrapper : MonoBehaviour {
-	JsonConverter jsonconverter;
 
 	public delegate void Callback(Dictionary<string,object> json);
 
 	public WWW GET(string url, Callback callback) {
-		jsonconverter 
-			= GameObject.Find("JsonConverter").GetComponent<JsonConverter>();		WWW www = new WWW (url);
+		/*jsonconverter 
+			= GameObject.Find("JsonConverter").GetComponent<JsonConverter>();*/
+		WWW www = new WWW (url);
 		StartCoroutine (WaitForRequest (www, callback));
 		return www;
 	}
@@ -29,8 +29,7 @@ public class Wrapper : MonoBehaviour {
 		// check for errors
 		if (www.error == null) {
 			Debug.Log("WWW Ok!: " + www.text);
-			Dictionary<string, object> json = jsonconverter.JsonConv (www);
-			callback(json);
+			callback(JsonConverter.JsonConv (www.text));
 		} else {
 			Debug.Log("WWW Error: "+ www.error);
 		}

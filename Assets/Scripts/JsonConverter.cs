@@ -3,13 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using MiniJSON;
 
-public class JsonConverter : MonoBehaviour {
+public class JsonConverter : Object {
 
 	// Json形式にパースする
-	public Dictionary<string, object> JsonConv(WWW www){
-		var json 
-			= Json.Deserialize(www.text) as Dictionary<string, object>;
-
-		return json;
+	public static Dictionary<string, object> JsonConv(string fetchString){
+		return Json.Deserialize(fetchString) as Dictionary<string, object>;
 	}
 }
