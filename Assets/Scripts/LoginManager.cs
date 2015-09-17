@@ -9,6 +9,7 @@ public class LoginManager : MonoBehaviour {
 
 	public GameObject successImage;
 	public GameObject errorImage;
+	public GameObject waitingImage;
 	
 	public void SetPlayerName(string PlayerName){
 		playerName = PlayerName;
@@ -44,5 +45,11 @@ public class LoginManager : MonoBehaviour {
 		GameObject parentObject = GameObject.Find("Canvas");
 		GameObject errorPrefab = (GameObject)Instantiate(errorImage);
 		errorPrefab.transform.SetParent (parentObject.transform, false);
+	}
+
+	public void ShowWaiting(){
+		GameObject parentObject = GameObject.Find("Canvas");
+		GameObject waitingPrefab = (GameObject)Instantiate(waitingImage);
+		waitingPrefab.transform.SetParent (parentObject.transform, false);
 	}
 }

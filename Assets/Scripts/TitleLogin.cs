@@ -9,7 +9,8 @@ public class TitleLogin : MonoBehaviour {
 	LoginManager loginManager;
 	UserManager userManager;
 
-
+	private bool loginSuccess = false;
+	private float getCounter = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,13 @@ public class TitleLogin : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (loginSuccess) {
+			getCounter += Time.deltaTime;
+			if(getCounter > 1.0f){
+				StartCoroutine (StateAccess());
+				getCounter = 0;
+			}
+		}
 	}
 
 	public void OnClick(){
@@ -44,6 +52,8 @@ public class TitleLogin : MonoBehaviour {
 		if (download.error == null) {
 			Debug.Log (download.text);
 			loginManager.ShowSuccess();
+			loginSuccess = true;
+			loginManager.ShowWaiting();
 			// cast
 			var json = Json.Deserialize(download.text) as Dictionary<string, object>;
 
@@ -55,10 +65,25 @@ public class TitleLogin : MonoBehaviour {
 			userManager.userInfo.Add("role", (string)json["role"]);
 
 			// scene load
-			Application.LoadLevel("main");
+			//Application.LoadLevel("main");
 		} else {
 			Debug.Log ("Error");
 			loginManager.ShowError();
+		}
+	}
+
+	private IEnumerator StateAccess(){
+		Debug.Log ("state_access");
+		WWW www = new WWW("http://" + loginManager.GetURL() + "/plays/" + userManager.userInfo["play_id"] + "/state");
+		yield return www;
+		if (www.error == null) {
+			Debug.Log (www.text);
+			var json = Json.Deserialize (www.text) as Dictionary<string, object>;
+			if ((string)json ["state"] == "playing") 
+				Application.LoadLevel ("main");
+		} else {
+			Debug.Log("state_access_error");
+			yield break;
 		}
 	}
 }
