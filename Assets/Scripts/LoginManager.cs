@@ -10,6 +10,10 @@ public class LoginManager : MonoBehaviour {
 	public GameObject successImage;
 	public GameObject errorImage;
 	public GameObject waitingImage;
+
+	void Awake(){
+		DontDestroyOnLoad(this.gameObject);
+	}
 	
 	public void SetPlayerName(string PlayerName){
 		playerName = PlayerName;
