@@ -3,9 +3,9 @@ using System.Collections;
 
 public class LoginManager : MonoBehaviour {
 
-	private string playerName;
-	private string url;
-	private string playRoomNo;
+	public string playerName;
+	public string url;
+	public string playRoomNo;
 
 	public GameObject successImage;
 	public GameObject errorImage;

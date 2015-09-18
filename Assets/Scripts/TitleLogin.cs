@@ -57,15 +57,19 @@ public class TitleLogin : MonoBehaviour {
 			// cast
 			var json = Json.Deserialize(download.text) as Dictionary<string, object>;
 
-
 			// keep status
+			/*
 			userManager.userInfo.Add("user_id", (long)json["user_id"]);
 			userManager.userInfo.Add("play_id", (long)json["play_id"]);
 			userManager.userInfo.Add("state", (string)json["state"]);
 			userManager.userInfo.Add("role", (string)json["role"]);
+			*/
+			userManager.user_id = (long)json["user_id"];
+			userManager.play_id = (long)json["play_id"];
+			userManager.state = (string)json["state"];
+			userManager.role = (string)json["role"];
 
-			// scene load
-			//Application.LoadLevel("main");
+		
 		} else {
 			Debug.Log ("Error");
 			loginManager.ShowError();
@@ -74,7 +78,7 @@ public class TitleLogin : MonoBehaviour {
 
 	private IEnumerator StateAccess(){
 		Debug.Log ("state_access");
-		WWW www = new WWW("http://" + loginManager.GetURL() + "/plays/" + userManager.userInfo["play_id"] + "/state");
+		WWW www = new WWW("http://" + loginManager.GetURL() + "/plays/" + userManager.play_id + "/state");
 		yield return www;
 		if (www.error == null) {
 			Debug.Log (www.text);
