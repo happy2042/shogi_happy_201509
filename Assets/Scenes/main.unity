@@ -357,6 +357,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1645875243}
   - 114: {fileID: 1645875242}
+  - 114: {fileID: 1645875245}
+  - 114: {fileID: 1645875244}
   m_Layer: 0
   m_Name: ShogiInfoGetter
   m_TagString: Untagged
@@ -387,6 +389,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &1645875244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1645875241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fb6081a3d33164199463dd3cbb0abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn_count: 0
+  watcher_count: 0
+  turn_player: 0
+  state: 
+--- !u!114 &1645875245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1645875241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5460c5ff42c86d04c908a06b36a1a269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1906077145
 Prefab:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class KomaInformation : MonoBehaviour {
 
-	public string komaName = "oh";
+	public string komaName;
 	public long posx;
 	public long posy;
 	public long owner;

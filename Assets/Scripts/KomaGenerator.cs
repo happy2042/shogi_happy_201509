@@ -54,7 +54,7 @@ public class KomaGenerator : MonoBehaviour {
 	public void KomaInfoSet(Dictionary<string, object> komaInfo){
 		var komaInfomation = koma.GetComponent<KomaInformation> ();
 
-		//komaInfomation.komaName = (string)komaInfo["name"];
+		komaInfomation.komaName = (string)komaInfo["name"];
 		komaInfomation.posx = (long)komaInfo["posx"];
 		komaInfomation.posy = (long)komaInfo["posy"];
 		komaInfomation.owner = (long)komaInfo["owner"];
