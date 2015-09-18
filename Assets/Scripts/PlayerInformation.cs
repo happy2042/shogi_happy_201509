@@ -3,10 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using MiniJSON;
 
-public class PlayerInformation : Object {
+public class PlayerInformation : MonoBehaviour {
 
-	Dictionary<string, object> first_player;
-	Dictionary<string, object> last_player;
+	public Dictionary<string, object> first_player;
+	public Dictionary<string, object> last_player;
+
+	void Start(){
+		first_player = new Dictionary<string, object>();
+		last_player = new Dictionary<string, object>();
+	}
 
 	public void SetFirstInfo(Dictionary<string, object> first){
 		first_player.Add("user_id", (long)first["user_id"]);

@@ -7,8 +7,6 @@ public class Wrapper : MonoBehaviour {
 	public delegate void Callback(Dictionary<string,object> json);
 
 	public WWW GET(string url, Callback callback) {
-		/*jsonconverter 
-			= GameObject.Find("JsonConverter").GetComponent<JsonConverter>();*/
 		WWW www = new WWW (url);
 		StartCoroutine (WaitForRequest (www, callback));
 		return www;

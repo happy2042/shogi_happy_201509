@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MiniJSON;
 
-public class PlayingInformation : Object {
+public class PlayingInformation : MonoBehaviour {
 
 	public long turn_count;
 	public long watcher_count;

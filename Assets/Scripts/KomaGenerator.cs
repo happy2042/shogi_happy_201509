@@ -5,7 +5,7 @@ using MiniJSON;
 
 public class KomaGenerator : MonoBehaviour {
 
-	string url = "http://192.168.3.83:3000/pieces.json";
+	string url = "http://192.168.3.83:3000/get_pieces.json";
 
 	public GameObject koma;
 	public GameObject parentObject;

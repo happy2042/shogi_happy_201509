@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class KomaInformation : MonoBehaviour {
 
-	public string komaName;
+	public string komaName = "oh";
 	public long posx;
 	public long posy;
 	public long owner;
@@ -31,8 +31,8 @@ public class KomaInformation : MonoBehaviour {
 	}
 
 	public void SpriteChanger(){
-		Sprite spr = (Sprite)Resources.Load("Shogi_pictures/60x64" + komaName);
+		Sprite spr = Resources.Load<Sprite>("Shogi_pictures/60x64/" + komaName);
 		Image image = this.GetComponent<Image> ();
-		image.sprite = spr;
+		image.overrideSprite = spr;
  	}
 }
