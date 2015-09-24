@@ -14,10 +14,6 @@ public class KomaInformation : MonoBehaviour {
 	public void MyPosition(){
 		RectTransform rect = this.GetComponent<RectTransform>();
 		rect.localPosition = new Vector3(CalcPosX(posx), CalcPosY(posy), 0f);
-		/*
-		if (owner != owner_id)
-			rect.localRotation = Quaternion.AngleAxis (180, Vector3.z);
-			*/
 	}
 
 	public float CalcPosX(long x){

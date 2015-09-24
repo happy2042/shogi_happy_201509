@@ -20,11 +20,3 @@ public class UserManager : MonoBehaviour {
 		userInfo = new Dictionary<string, object> ();
 	}
 }
-
-
-/*
-userManager.userInfo.Add("user_id", (long)json["user_id"]);
-userManager.userInfo.Add("play_id", (long)json["play_id"]);
-userManager.userInfo.Add("state", (string)json["state"]);
-userManager.userInfo.Add("role", (string)json["role"]);
-*/

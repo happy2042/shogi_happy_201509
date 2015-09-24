@@ -39,9 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aeba9aac039170438c343bcba065077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  user_id: 0
-  play_id: 0
-  state: 
+  user_id: 1
+  play_id: 1
+  state: playing
   role: 
 --- !u!1001 &100100000
 Prefab:

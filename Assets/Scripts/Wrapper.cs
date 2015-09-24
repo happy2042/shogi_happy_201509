@@ -24,6 +24,7 @@ public class Wrapper : MonoBehaviour {
 
 	private IEnumerator WaitForRequest(WWW www, Callback callback) {
 		yield return www;
+		Debug.Log(www.url);
 		// check for errors
 		if (www.error == null) {
 			Debug.Log("WWW Ok!: " + www.text);
