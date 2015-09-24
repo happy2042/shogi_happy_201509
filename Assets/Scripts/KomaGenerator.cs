@@ -27,7 +27,7 @@ public class KomaGenerator : MonoBehaviour {
 		url = "http://" + loginManager.GetURL() 
 			+ "/plays/" + userManager.play_id.ToString() + "/pieces";
 
-		KomaInfoGet ();
+		//KomaInfoGet ();
 	}
 
 	// 駒の情報を取得

@@ -35,12 +35,6 @@ public class TitleLogin : MonoBehaviour {
 	
 	
 	private IEnumerator LoginAccess(){
-		/*
-		string playerName = "happy";
-		string url = "http://192.168.33.11:3000/users/login";
-		string playRoomNo = "1";
-		*/
-
 		WWWForm form = new WWWForm ();
 
 		form.AddField ("name", loginManager.GetPlayerName());
@@ -58,12 +52,6 @@ public class TitleLogin : MonoBehaviour {
 			var json = Json.Deserialize(download.text) as Dictionary<string, object>;
 
 			// keep status
-			/*
-			userManager.userInfo.Add("user_id", (long)json["user_id"]);
-			userManager.userInfo.Add("play_id", (long)json["play_id"]);
-			userManager.userInfo.Add("state", (string)json["state"]);
-			userManager.userInfo.Add("role", (string)json["role"]);
-			*/
 			userManager.user_id = (long)json["user_id"];
 			userManager.play_id = (long)json["play_id"];
 			userManager.state = (string)json["state"];

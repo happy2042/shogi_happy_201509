@@ -8,6 +8,7 @@ public class ShogiInfoGetter : MonoBehaviour {
 	Wrapper wrapper;
 	UserManager userManager;
 	LoginManager loginManager;
+	KomaGenerator komaGenerator;
 
 	PlayerInformation playerInfo;
 	PlayingInformation playInfo;
@@ -26,6 +27,7 @@ public class ShogiInfoGetter : MonoBehaviour {
 		wrapper = GameObject.Find ("Wrapper").GetComponent<Wrapper> ();
 		userManager = GameObject.Find("UserManager").GetComponent<UserManager>();
 		loginManager = GameObject.Find("LoginManager").GetComponent<LoginManager>();
+		komaGenerator = GameObject.Find("KomaGenerator").GetComponent<KomaGenerator>();
 
 		playerInfo = this.GetComponent<PlayerInformation>();
 		playInfo = this.GetComponent<PlayingInformation>();
@@ -39,7 +41,6 @@ public class ShogiInfoGetter : MonoBehaviour {
 
 		UsersInfoGet ();
 		PlayInfoGet ();
-
 	}
 	
 	// Update is called once per frame
@@ -52,19 +53,8 @@ public class ShogiInfoGetter : MonoBehaviour {
 	}
 	
 	public void SetUsersInfo(Dictionary<string,object> json){
-		/*
-		if(json.ContainsKey("first_player")){
-			Debug.Log ("setting player info: first");
-			playerInfo.SetFirstInfo ((Dictionary<string, object>)json ["first_player"]);
-		}
-		else if(json.ContainsKey("last_player")){
-			Debug.Log ("setting player info: last");
-			playerInfo.SetLastInfo ((Dictionary<string, object>)json ["last_player"]);
-
-		}
-		*/
 		playerInfo.SetFirstInfo ((Dictionary<string, object>)json ["first_player"]);
-		playerInfo.SetLastInfo ((Dictionary<string, object>)json ["last_player"]);
+		playerInfo.SetLastInfo ((Dictionary<string, object>)json ["last_player"], Callback);
 	}
 	
 	public void PlayInfoGet(){
@@ -73,5 +63,9 @@ public class ShogiInfoGetter : MonoBehaviour {
 	
 	public void SetPlayInfo(Dictionary<string,object> json){
 		playInfo.SetPlayingInfo (json);
+	}
+
+	public void Callback(){
+		komaGenerator.KomaInfoGet ();
 	}
 }

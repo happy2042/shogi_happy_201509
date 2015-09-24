@@ -11,9 +11,16 @@ public class KomaInformation : MonoBehaviour {
 	public long owner;
 	public bool promote;
 
+	PlayerInformation playerInformation;
+
 	public void MyPosition(){
 		RectTransform rect = this.GetComponent<RectTransform>();
+		playerInformation = 
+			GameObject.Find("ShogiInfoGetter").GetComponent<PlayerInformation>();
 		rect.localPosition = new Vector3(CalcPosX(posx), CalcPosY(posy), 0f);
+		if(owner.Equals(playerInformation.last_player["user_id"])){
+			rect.localRotation = Quaternion.Euler(0, 0, 180);
+		}
 	}
 
 	public float CalcPosX(long x){
