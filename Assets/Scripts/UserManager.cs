@@ -6,6 +6,11 @@ public class UserManager : MonoBehaviour {
 
 	public Dictionary<string, object> userInfo;
 
+	public long user_id;
+	public long play_id;
+	public string state;
+	public string role;
+
 	void Awake(){
 		DontDestroyOnLoad(this.gameObject);
 	}
@@ -13,10 +18,5 @@ public class UserManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		userInfo = new Dictionary<string, object> ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

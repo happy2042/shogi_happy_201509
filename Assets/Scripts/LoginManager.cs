@@ -3,9 +3,17 @@ using System.Collections;
 
 public class LoginManager : MonoBehaviour {
 
-	private string playerName;
-	private string url;
-	private string playRoomNo;
+	public string playerName;
+	public string url;
+	public string playRoomNo;
+
+	public GameObject successImage;
+	public GameObject errorImage;
+	public GameObject waitingImage;
+
+	void Awake(){
+		DontDestroyOnLoad(this.gameObject);
+	}
 	
 	public void SetPlayerName(string PlayerName){
 		playerName = PlayerName;
@@ -29,5 +37,23 @@ public class LoginManager : MonoBehaviour {
 
 	public string GetRoomNo(){
 		return playRoomNo;
+	}
+
+	public void ShowSuccess(){
+		GameObject parentObject = GameObject.Find("Canvas");
+		GameObject successPrefab = (GameObject)Instantiate(successImage);
+		successPrefab.transform.SetParent (parentObject.transform, false);
+	}
+
+	public void ShowError(){
+		GameObject parentObject = GameObject.Find("Canvas");
+		GameObject errorPrefab = (GameObject)Instantiate(errorImage);
+		errorPrefab.transform.SetParent (parentObject.transform, false);
+	}
+
+	public void ShowWaiting(){
+		GameObject parentObject = GameObject.Find("Canvas");
+		GameObject waitingPrefab = (GameObject)Instantiate(waitingImage);
+		waitingPrefab.transform.SetParent (parentObject.transform, false);
 	}
 }
