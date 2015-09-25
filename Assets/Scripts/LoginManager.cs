@@ -11,8 +11,17 @@ public class LoginManager : MonoBehaviour {
 	public GameObject errorImage;
 	public GameObject waitingImage;
 
+	private GameObject parentObject;
+	private GameObject cover;
+
 	void Awake(){
 		DontDestroyOnLoad(this.gameObject);
+	}
+
+	void Start(){
+		parentObject = GameObject.Find("Canvas");
+		cover = GameObject.Find ("Cover");
+		cover.SetActive (false);
 	}
 	
 	public void SetPlayerName(string PlayerName){
@@ -40,20 +49,18 @@ public class LoginManager : MonoBehaviour {
 	}
 
 	public void ShowSuccess(){
-		GameObject parentObject = GameObject.Find("Canvas");
 		GameObject successPrefab = (GameObject)Instantiate(successImage);
 		successPrefab.transform.SetParent (parentObject.transform, false);
 	}
 
 	public void ShowError(){
-		GameObject parentObject = GameObject.Find("Canvas");
 		GameObject errorPrefab = (GameObject)Instantiate(errorImage);
 		errorPrefab.transform.SetParent (parentObject.transform, false);
 	}
 
 	public void ShowWaiting(){
-		GameObject parentObject = GameObject.Find("Canvas");
 		GameObject waitingPrefab = (GameObject)Instantiate(waitingImage);
 		waitingPrefab.transform.SetParent (parentObject.transform, false);
+		cover.SetActive (true);
 	}
 }

@@ -1,31 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &136914
+--- !u!1 &172164
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 224: {fileID: 22401838}
-  - 222: {fileID: 22218122}
-  - 114: {fileID: 11467670}
-  - 114: {fileID: 11407116}
-  - 114: {fileID: 11479002}
-  - 114: {fileID: 11423148}
+  - 224: {fileID: 22449200}
+  - 222: {fileID: 22234106}
+  - 114: {fileID: 11479464}
+  - 114: {fileID: 11425964}
+  - 114: {fileID: 11462564}
   m_Layer: 5
-  m_Name: koma
+  m_Name: ActiveMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &11407116
+--- !u!114 &11425964
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136914}
+  m_GameObject: {fileID: 172164}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -55,11 +54,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 11467670}
+  m_TargetGraphic: {fileID: 11479464}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11423148}
+      - m_Target: {fileID: 11462564}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -72,67 +71,52 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &11423148
+--- !u!114 &11462564
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136914}
+  m_GameObject: {fileID: 172164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b143715271f8c574192d041f01c48198, type: 3}
+  m_Script: {fileID: 11500000, guid: 18b4b41ef1f38af4c93d1ccc1fc6b255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMove: {fileID: 172164, guid: d69ea6a4ddfd7e34aa144e0a9bffc2cb, type: 2}
---- !u!114 &11467670
+  localPosX: 0
+  localPosY: 0
+--- !u!114 &11479464
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136914}
+  m_GameObject: {fileID: 172164}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 22afb2b75afb01e45bdfaa2490a6b248, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: .666666687}
+  m_Sprite: {fileID: 21300000, guid: c3be05dab8a5fd74994e0233bd98182a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11479002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916737d3901e88140987857c1fff563f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  komaName: fu
-  posx: 5
-  posy: 5
-  owner: 1
-  promote: 0
---- !u!222 &22218122
+--- !u!222 &22234106
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136914}
---- !u!224 &22401838
+  m_GameObject: {fileID: 172164}
+--- !u!224 &22449200
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136914}
+  m_GameObject: {fileID: 172164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -150,36 +134,8 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: activeMove
-      value: 
-      objectReference: {fileID: 172164, guid: d69ea6a4ddfd7e34aa144e0a9bffc2cb, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11423148}
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: komaName
-      value: fu
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: posy
-      value: 5
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 136914}
+  m_RootGameObject: {fileID: 172164}
   m_IsPrefabParent: 1
